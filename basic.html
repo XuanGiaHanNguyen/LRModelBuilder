@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linear Regression Model Builder</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="header">
-        <h1>Linear Regression Model Builder</h1>
-        <p>Build your linear regression from csv data file</p>
+      <h1>Linear Regression Model Builder</h1>
+      <p>Build your linear regression from csv data file</p>
     </div>
-    <hr>
+    <hr />
     <div class="main">
-        <h2>Data Input</h2>
-        <div>
-            <h3>Upload CSV File</h3>
-            <p>Click to select a CSV file containing your data</p>
-            <button>Choose File</button>
-        </div>
-        <div>
-            <h3>Sample Dataset</h3>
-            <p>Load sample data showing the relationship between study hours and test scores</p>
-            <button>Load Sample Data</button>
-        </div>
+      <h2>Data Input</h2>
+      <div>
+        <h3>Upload CSV File</h3>
+        <p>Click to select a CSV file containing your data</p>
+        <input type="file" />
+      </div>
+      <div>
+        <h3>Sample Dataset</h3>
+        <p>
+          Load sample data showing the relationship between study hours and test
+          scores
+        </p>
+        <button>Load Sample Data</button>
+      </div>
     </div>
-</body>
+    <div class="selection">
+      <h2>Variable Selection</h2>
+      <div class="choices">
+        <p>Independent Variable (X)</p>
+        <p>Dependent Variable (Y)</p>
+        <div></div>
+        <select name="" id="">
+          <option value="">Select X column...</option>
+        </select>
+        <select name="" id="">
+          <option value="">Select Y column...</option>
+        </select>
+        <button>Analyze Data</button>
+      </div>
+    </div>
+    <div class="result">
+      <div>
+        <canvas></canvas>
+      </div>
+      <div>
+        <!-- Equation -->
+        <div></div>
+        <div class="stat-item">
+          <span class="stat-label">R-squared (R²)</span>
+          <span class="stat-value" id="rsquared">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Correlation (r)</span>
+          <span class="stat-value" id="correlation">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Slope</span>
+          <span class="stat-value" id="slope">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Intercept</span>
+          <span class="stat-value" id="intercept">-</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Data Points</span>
+          <span class="stat-value" id="dataPoints">-</span>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
