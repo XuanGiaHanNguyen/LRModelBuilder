@@ -1,0 +1,54 @@
+* {
+
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: 100;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+h1 {
+    padding: 20px 0px 5px 0px;
+}
+
+h2 {
+    padding: 0px 0px 10px 0px;
+    font-weight: 500;
+}
+
+.header {
+    padding: 0px 30px;
+}
+
+.main {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 20px 30px;
+    padding: 15px;
+}
+
+.upload {
+    border: 1px dotted black;
+    border-radius: 5px;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sample {
+    margin: 15px 0px 0px 0px;
+    padding: 12px;
+    
+    border: 1px solid black
+}
+
+#subtitle {
+    padding: 0px 0px 20px 0px;
+}
