@@ -27,7 +27,7 @@ h2 {
 .main {
     border: 1px solid black;
     border-radius: 5px;
-    margin: 20px 30px;
+    margin: 20px 25px;
     padding: 15px;
 }
 
@@ -46,7 +46,16 @@ h2 {
     margin: 15px 0px 0px 0px;
     padding: 12px;
     
-    border: 1px solid black
+    border: 1px solid black;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.selection {
+    
 }
 
 #subtitle {
