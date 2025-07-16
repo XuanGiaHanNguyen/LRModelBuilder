@@ -1,63 +1,147 @@
 * {
-
   font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: 100;
+  color: #333333;
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 h1 {
-    padding: 20px 0px 5px 0px;
+  padding: 20px 0px 5px 0px;
 }
 
 h2 {
-    padding: 0px 0px 10px 0px;
-    font-weight: 500;
+  padding: 0px 0px 10px 0px;
+  font-weight: 500;
 }
 
 .header {
-    padding: 0px 30px;
+  padding: 0px 30px;
 }
 
 .main {
-    border: 1px solid black;
-    border-radius: 5px;
-    margin: 20px 25px;
-    padding: 15px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  margin: 20px 25px;
+  padding: 15px;
 }
 
 .upload {
-    border: 1px dotted black;
-    border-radius: 5px;
-    padding: 50px;
+  border: 1px dotted #808080;
+  border-radius: 5px;
+  padding: 50px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .sample {
-    margin: 15px 0px 0px 0px;
-    padding: 12px;
-    
-    border: 1px solid black;
-    border-radius: 5px;
+  margin: 15px 0px 0px 0px;
+  padding: 12px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+
+  background-color: #e8e8e8;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .selection {
-    
+  margin: 20px 25px;
+  padding: 15px;
+
+  border: 1px solid #808080;
+  border-radius: 5px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: end;
+}
+
+/* On small screens, use 1 column */
+@media (max-width: 640px) {
+  .choices {
+    grid-template-columns: 1fr;
+  }
+  .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.analyze {
+    padding: 8px 0px;
+}
+
+.choices > * {
+  margin: 5px;
 }
 
 #subtitle {
-    padding: 0px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
+}
+
+select {
+  padding: 8px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+/* .stat-item {
+    
+} */
+
+.result {
+    margin: 20px 25px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.result > * {
+    flex: 1;
+}
+
+.stat {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.equation {
+    border: 1px solid #333333;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.stat-item {
+    margin-bottom: 5px;
+    margin-left: 10px;
 }
