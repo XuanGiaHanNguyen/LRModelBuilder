@@ -24,14 +24,14 @@ h2 {
 }
 
 .main {
-  border: 1px solid #808080;
+  border: 1px solid #a1a1a1;
   border-radius: 5px;
   margin: 20px 25px;
   padding: 15px;
 }
 
 .upload {
-  border: 1px dotted #808080;
+  border: 1px dotted #878787;
   border-radius: 5px;
   padding: 50px;
 
@@ -60,7 +60,7 @@ h2 {
   margin: 20px 25px;
   padding: 15px;
 
-  border: 1px solid #808080;
+  border: 1px solid #a1a1a1;
   border-radius: 5px;
 }
 
@@ -109,9 +109,11 @@ button {
   margin-top: 5px;
 }
 
-/* .stat-item {
-    
-} */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #a1a1a1;
+}
 
 .result {
     margin: 20px 25px;
@@ -125,7 +127,7 @@ button {
 }
 
 .stat {
-    border: 1px solid #333333;
+    border: 1px solid #a1a1a1;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -133,7 +135,7 @@ button {
 }
 
 .equation {
-    border: 1px solid #333333;
+    border: 1px solid #a1a1a1;
     border-radius: 5px;
     padding: 5px;
     display: flex;
