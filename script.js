@@ -4,21 +4,56 @@ let currentData = null;
 let chart = null;
 
 // Converts CSV to JS data
+// Updated handleFileUpload function with better error handling and debugging
 function handleFileUpload(event) {
   const file = event.target.files[0];
   if (file) {
+    console.log("File selected:", file.name); // Debug log
+    
     Papa.parse(file, {
       complete: function (results) {
-        currentData = results.data;
-        populateCoulmnSelector();
-        showNotification("File uploaded sucessfully", "success");
+        console.log("Parse results:", results); // Debug log
+        
+        // Check for parsing errors
+        if (results.errors && results.errors.length > 0) {
+          console.error("Parse errors:", results.errors);
+          showNotification("Error parsing CSV file", "error");
+          return;
+        }
+        
+        // Check if data exists and has content
+        if (!results.data || results.data.length === 0) {
+          showNotification("No data found in CSV file", "error");
+          return;
+        }
+        
+        // Filter out empty rows
+        const filteredData = results.data.filter(row => {
+          return Object.values(row).some(value => value !== null && value !== undefined && value !== '');
+        });
+        
+        if (filteredData.length === 0) {
+          showNotification("No valid data rows found", "error");
+          return;
+        }
+        
+        currentData = filteredData;
+        console.log("Current data set to:", currentData); // Debug log
+        
+        populateColumnSelectors();
+        showNotification("File uploaded successfully", "success");
       },
       header: true,
       skipEmptyLines: true,
       dynamicTyping: true,
+      error: function(error) {
+        console.error("Papa Parse error:", error);
+        showNotification("Error reading CSV file", "error");
+      }
     });
   }
 }
+
 
 function loadSampleData() {
   const sampleCSV = `Hours_Studied,Test_Score
@@ -54,20 +89,32 @@ function loadSampleData() {
   });
 }
 
-// Update the column section
+// Also update populateColumnSelectors with better error handling
 function populateColumnSelectors() {
   const xSelect = document.getElementById("xColumn");
   const ySelect = document.getElementById("yColumn");
 
-  // Clear exisiting options
+  // Clear existing options
   xSelect.innerHTML = '<option value="">Select X column...</option>';
   ySelect.innerHTML = '<option value="">Select Y column...</option>';
 
+  console.log("Populating selectors with data:", currentData); // Debug log
+
   if (currentData && currentData.length > 0) {
     const headers = Object.keys(currentData[0]);
+    console.log("Headers found:", headers); // Debug log
+    
+    if (headers.length === 0) {
+      showNotification("No columns found in data", "error");
+      return;
+    }
+    
     headers.forEach((header) => {
-      xSelect.innerHTML += `<option value="${header}">${header}</option>`;
-      ySelect.innerHTML += `<option value="${header}">${header}</option>`;
+      // Skip empty or null headers
+      if (header && header.trim() !== '') {
+        xSelect.innerHTML += `<option value="${header}">${header}</option>`;
+        ySelect.innerHTML += `<option value="${header}">${header}</option>`;
+      }
     });
   }
 

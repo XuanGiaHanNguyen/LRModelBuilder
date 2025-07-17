@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Linear Regression Model Builder</title>
-    <link rel="icon" href="diagram.png" type="image/png">
+    <link rel="icon" href="diagram.png" type="image/png" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
@@ -26,10 +26,18 @@
     <hr />
     <div class="main">
       <h2>Data Input</h2>
-      <div class="upload" onclick="document.getElementById('fileInput').click()">
+      <div
+        class="upload"
+        onclick="document.getElementById('fileInput').click()"
+      >
         <h3>Upload CSV File</h3>
         <p>Click to select a CSV file containing your data</p>
-        <input type="file" id="fileInput" class="file-input" accept=".csv" onchange="handleFileUpload(event)"/>
+        <input
+          type="file"
+          id="fileInput"
+          class="file-input"
+          accept=".csv"
+          onchange="handleFileUpload(event)">
       </div>
       <div class="sample">
         <h3>Sample Dataset</h3>
@@ -45,7 +53,7 @@
     <div class="selection">
       <h2>Variable Selection</h2>
       <div class="choices">
-        <div class="field-group" >
+        <div class="field-group">
           <p>Independent Variable (X)</p>
           <select name="x-variable" id="xColumn">
             <option value="">Select X column...</option>
@@ -54,18 +62,25 @@
 
         <div class="field-group">
           <p>Dependent Variable (Y)</p>
-          <select name="y-variable" id="yColumn" >
+          <select name="y-variable" id="yColumn">
             <option value="">Select Y column...</option>
           </select>
         </div>
 
         <div class="field-group">
           <div></div>
-          <button class="analyze" id="analyzeBtn" onclick="performRegression()" disabled>Analyze Data</button>
+          <button
+            class="analyze"
+            id="analyzeBtn"
+            onclick="performRegression()"
+            disabled
+          >
+            Analyze Data
+          </button>
         </div>
       </div>
     </div>
-    <div class="result" id="results" style="display: none;">
+    <div class="result" id="results" style="display: none">
       <div class="chart">
         <canvas id="regressionChart"></canvas>
       </div>
