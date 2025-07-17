@@ -135,8 +135,10 @@ hr {
 }
 
 .equation {
-  border: 1px solid #a1a1a1;
+  border: 1px solid #e4e4e4;
   border-radius: 5px;
+
+  background-color: #e8e8e8;
   padding: 5px;
   display: flex;
   justify-content: center;
