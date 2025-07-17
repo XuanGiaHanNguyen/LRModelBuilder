@@ -37,30 +37,30 @@
           scores
         </p>
         <div>
-          <button>Load Sample Data</button>
+          <button onclick="loadSampleData()">Load Sample Data</button>
         </div>
       </div>
     </div>
     <div class="selection">
       <h2>Variable Selection</h2>
       <div class="choices">
-        <div class="field-group">
+        <div class="field-group" >
           <p>Independent Variable (X)</p>
-          <select name="x-variable">
+          <select name="x-variable" id="xColumn">
             <option value="">Select X column...</option>
           </select>
         </div>
 
         <div class="field-group">
           <p>Dependent Variable (Y)</p>
-          <select name="y-variable">
+          <select name="y-variable" id="yColumn" >
             <option value="">Select Y column...</option>
           </select>
         </div>
 
         <div class="field-group">
           <div></div>
-          <button class="analyze">Analyze Data</button>
+          <button class="analyze" id="analyzeBtn">Analyze Data</button>
         </div>
       </div>
     </div>
