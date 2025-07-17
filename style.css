@@ -70,10 +70,10 @@ h2 {
 }
 
 .field-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: end;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: end;
 }
 
 /* On small screens, use 1 column */
@@ -89,7 +89,7 @@ h2 {
 }
 
 .analyze {
-    padding: 8px 0px;
+  padding: 8px 0px;
 }
 
 .choices > * {
@@ -116,34 +116,39 @@ hr {
 }
 
 .result {
-    margin: 20px 25px;
+  margin: 20px 25px;
 
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .result > * {
-    flex: 1;
+  flex: 1;
 }
 
 .stat {
-    border: 1px solid #a1a1a1;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  border: 1px solid #a1a1a1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
 }
 
 .equation {
-    border: 1px solid #a1a1a1;
-    border-radius: 5px;
-    padding: 5px;
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+  border: 1px solid #a1a1a1;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .stat-item {
-    margin-bottom: 5px;
-    margin-left: 10px;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.chart {
+  background: white;
+  padding: 20px;
 }

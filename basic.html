@@ -25,10 +25,10 @@
     <hr />
     <div class="main">
       <h2>Data Input</h2>
-      <div class="upload">
+      <div class="upload" onclick="document.getElementById('fileInput').click()">
         <h3>Upload CSV File</h3>
         <p>Click to select a CSV file containing your data</p>
-        <input type="file" />
+        <input type="file" id="fileInput" class="file-input" accept=".csv" onchange="handleFileUpload(event)"/>
       </div>
       <div class="sample">
         <h3>Sample Dataset</h3>
@@ -60,17 +60,17 @@
 
         <div class="field-group">
           <div></div>
-          <button class="analyze" id="analyzeBtn">Analyze Data</button>
+          <button class="analyze" id="analyzeBtn" onclick="performRegression()" disabled>Analyze Data</button>
         </div>
       </div>
     </div>
-    <div class="result">
-      <div>
-        <canvas></canvas>
+    <div class="result" id="results" style="display: none;">
+      <div class="chart">
+        <canvas id="regressionChart"></canvas>
       </div>
       <div class="stat">
         <!-- Equation -->
-        <div class="equation">Equation</div>
+        <div class="equation" id="equation"></div>
 
         <div class="stat-item">
           <span class="stat-label">R-squared (R²)</span>
